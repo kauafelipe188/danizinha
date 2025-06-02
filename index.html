@@ -3,127 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para Daniele Tenório</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Para Daniele</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+    :root {
+      --rosa-claro: #fff0f4;
+      --rosa: #ec4899;
+      --rosa-escuro: #be123c;
+      --branco: #fff;
+      --cinza: #444;
+      --sombra: 0 10px 25px rgba(0,0,0,0.08);
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    * {
+      box-sizing: border-box;
     }
-    .heart {
-      animation: float 6s ease-in-out infinite;
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--rosa-claro) 60%, #ffe4ec 100%);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.6s;
+      overflow-x: hidden;
     }
-    .pulse {
-      animation: pulse 2s ease infinite;
-    }
-    .romantic-text {
-      font-family: 'Montserrat', sans-serif;
-    }
-    .fade-in {
-      animation: fadeIn 2s ease-in;
+    .box {
+      background: rgba(255,255,255,0.95);
+      border-radius: 2rem;
+      max-width: 700px;
+      width: 100%;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--sombra);
+      animation: fadeIn 1.2s;
+      border: 1.5px solid #f9c2d8;
+      position: relative;
     }
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      color: var(--rosa);
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-shadow: 0 2px 8px #f9c2d8;
+    }
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      color: var(--rosa-escuro);
+      font-size: 1.7rem;
+      text-align: center;
+      margin: 2rem 0 1rem 0;
+      font-weight: 400;
+    }
+    p {
+      color: var(--cinza);
+      margin-bottom: 1.3rem;
+      line-height: 1.7;
+      font-size: 1.08rem;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    .frase-destaque {
+      color: var(--rosa-escuro);
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.4rem;
+      text-align: center;
+      margin: 1.5rem 0;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #f9c2d8 0%, #fff0f4 100%);
+      border-radius: 1rem;
+      padding: 0.7rem 1rem;
+      display: block;
+    }
+    .assinatura {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .assinatura span {
+      color: var(--rosa-escuro);
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .coracao {
+      display: block;
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      animation: pulse 1.5s infinite;
+      color: var(--rosa);
+      user-select: none;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);}
+      50% { transform: scale(1.15);}
+    }
+    .brilho {
+      position: absolute;
+      top: -15px; left: -15px;
+      width: 30px; height: 30px;
+      background: radial-gradient(circle, #fff5fa, transparent);
+      border-radius: 50%;
+      animation: brilho 2s ease-in-out infinite;
+    }
+    @keyframes brilho {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+      50% { transform: translate(10px, 10px) scale(1.2); opacity: 0.3; }
+    }
+    @media (max-width: 600px) {
+      .box {
+        padding: 1.2rem 0.5rem;
+        border-radius: 1.2rem;
+      }
+      h1 { font-size: 2rem; }
+      .frase-destaque { font-size: 1.1rem; }
     }
   </style>
 </head>
-<body class="bg-pink-50 min-h-screen overflow-x-hidden">
-
-  <!-- Música de fundo -->
-  <audio autoplay loop class="hidden">
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-  </audio>
-
-  <!-- Corações flutuantes -->
-  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div class="heart text-red-300 text-4xl absolute top-1/4 left-1/6">❤️</div>
-    <div class="heart text-pink-200 text-2xl absolute top-1/3 right-1/5" style="animation-delay: 1s;">❤️</div>
-    <div class="heart text-red-400 text-3xl absolute top-2/3 left-1/4" style="animation-delay: 2s;">❤️</div>
-    <div class="heart text-pink-300 text-5xl absolute top-1/2 right-1/3" style="animation-delay: 3s;">❤️</div>
-    <div class="heart text-red-200 text-xl absolute top-3/4 left-3/4" style="animation-delay: 4s;">❤️</div>
+<body>
+  <div class="box">
+    <div class="brilho"></div>
+    <div class="coracao">💖</div>
+    <h1>Daniele Tenório</h1>
+    <p>Desde <strong>26 de fevereiro</strong>, tudo mudou sem eu perceber. Você era pra ser uma amiga e do nada virou algo além disso, virou o amor da minha vida, e entrou com tudo na minha vida, do jeito mais bonito possível.</p>
+    <p>Dani, mesmo com toda essa distância, sinto você aqui comigo. Sua presença virou parte do meu dia, da minha rotina, dos meus sorrisos.</p>
+    <span class="frase-destaque">"Você é o detalhe que faz tudo valer a pena."</span>
+    <p>Às vezes me pego sorrindo sozinho, lembrando de alguma conversa nossa, de algum áudio bobo, de um bom dia inesperado. Você faz falta até quando está presente, porque sempre quero mais de você.</p>
+    <p>Não é um pedido de namoro ,<strong>ainda</strong> , é só meu coração dizendo: <strong>eu te amo</strong>. Sem pressa, sem pressão, só amor.</p>
+    <p>Você me faz acreditar que mesmo longe, dá pra se sentir perto. Mesmo sem toque, dá pra sentir tudo. E mesmo sem promessas, dá pra confiar.</p>
+    <span class="frase-destaque">"A distância só aumenta a vontade de te ter por perto."</span>
+    <p>Sei que a vida é corrida, que nem sempre dá pra falar o quanto a gente gostaria. Mas quero que saiba: você é lembrada em cada detalhe do meu dia, em cada música, em cada pensamento bom.</p>
+    <p>Isso aqui é só um pedacinho do que você significa pra mim. Se eu pudesse, te mostraria com gestos... mas por enquanto, deixo em palavras.</p>
+    <h2>Obrigado por ser você</h2>
+    <p>Por me ouvir, por me entender, por me fazer sentir especial mesmo nos dias mais comuns. Por ser abrigo, mesmo de longe. Por aguentar meus dramas, me passar confiança mesmo qnd algo parece errado.</p>
+    <p>Que a gente continue se encontrando, mesmo que seja só em mensagens, em risadas, em sonhos. E que, quando for a hora, a distância vire só um detalhe bonito da nossa história.</p>
+    <div class="assinatura">
+      Com carinho,<br>
+      <span>Kauã, ou, carinhosamente falando, seu neném</span>
+    </div>
   </div>
-
-  <!-- Conteúdo principal -->
-  <div class="relative z-10 max-w-3xl mx-auto px-4 py-12 romantic-text">
-    <header class="text-center mb-12 fade-in">
-      <h1 class="text-4xl md:text-5xl font-bold text-red-500">Para <span class="text-pink-600 font-semibold italic">Daniele Tenório</span></h1>
-      <div class="w-24 h-1 bg-pink-300 mx-auto mt-4"></div>
-    </header>
-
-    <main class="space-y-12">
-      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in">
-        <div class="text-pink-500 text-2xl mb-2">🕊️</div>
-        <p class="text-gray-700">
-          Desde o dia <span class="font-semibold text-pink-600">26 de fevereiro, às 14:53</span>... Foi quando meu mundo encontrou um novo sentido. Quando te conheci, <span class="text-red-500 font-semibold italic">Daniele Tenório</span>, tudo ficou mais leve, mais bonito, mais verdadeiro.
-        </p>
-      </div>
-
-      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 0.5s;">
-        <div class="text-red-500 text-2xl mb-2">❤️</div>
-        <p class="text-gray-700">
-          Você é o motivo do meu sorriso mais sincero. <span class="text-pink-600 font-semibold italic">Daniele</span>, não tem um só dia que eu não pense em você. Você mora nos meus pensamentos, vive nos meus sonhos, e pulsa em cada batida do meu coração.
-        </p>
-      </div>
-
-      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 1s;">
-        <div class="text-pink-500 text-2xl mb-2">📍</div>
-        <p class="text-gray-700">
-          <span class="font-semibold text-red-500">Curitiba e São Miguel dos Campos</span> são só lugares. Porque meu amor por você não cabe em mapas. A distância nunca foi obstáculo pra tudo que sinto por você. Eu te amo, <span class="text-pink-600 font-semibold italic">Dani</span>. Muito mais do que palavras conseguem dizer.
-        </p>
-      </div>
-
-      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 1.5s;">
-        <div class="text-red-400 text-2xl mb-2">🌹</div>
-        <p class="text-gray-700">
-          Mesmo sem nunca termos nos tocado, eu sinto você em mim. Você é a calmaria em meio ao caos, a certeza que eu quero pra minha vida inteira. <span class="text-pink-600 font-semibold italic">Daniele Tenório</span>, você é o meu <span class="italic">"pra sempre"</span> mais bonito.
-        </p>
-      </div>
-
-      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 2s;">
-        <div class="text-pink-500 text-2xl mb-2">🌌</div>
-        <p class="text-gray-700">
-          Meu amor por você é leve, forte, profundo e real. Talvez o destino tenha colocado quilômetros entre nós, mas o coração deu um jeito de fazer a gente se encontrar.
-        </p>
-      </div>
-
-      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 2.5s;">
-        <div class="text-red-500 text-2xl mb-2">🎵</div>
-        <p class="text-gray-700">
-          <span class="italic">"Mesmo sem fotos juntos, cada memória minha é com você."</span> Esse site é um pedaço de mim pra você. Uma forma de dizer o que transborda no meu peito: Eu te amo, <span class="text-pink-600 font-semibold italic">Daniele</span>. E quero você na minha vida, hoje e sempre.
-        </p>
-      </div>
-    </main>
-
-    <footer class="mt-16 text-center fade-in" style="animation-delay: 3s;">
-      <button id="readAgain" class="bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 pulse">
-        <span style="font-family: 'Montserrat', sans-serif;" class="text-xl italic">Lê de novo? Porque te amar nunca cansa.</span>
-      </button>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('readAgain').addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      const messages = document.querySelectorAll('.fade-in');
-      messages.forEach(msg => {
-        msg.style.animation = 'none';
-        void msg.offsetWidth;
-        msg.style.animation = 'fadeIn 2s ease-in';
-      });
-    });
-
-    document.addEventListener('click', function() {
-      const audio = document.querySelector('audio');
-      if (audio.paused) {
-        audio.play().catch(e => console.log("Audio play failed:", e));
-      }
-    }, { once: true });
-  </script>
 </body>
 </html>
