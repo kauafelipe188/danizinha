@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Daniele Tenório</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .heart {
+      animation: float 6s ease-in-out infinite;
+    }
+    .pulse {
+      animation: pulse 2s ease infinite;
+    }
+    .romantic-text {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .fade-in {
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-pink-50 min-h-screen overflow-x-hidden">
+
+  <!-- Música de fundo -->
+  <audio autoplay loop class="hidden">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Corações flutuantes -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="heart text-red-300 text-4xl absolute top-1/4 left-1/6">❤️</div>
+    <div class="heart text-pink-200 text-2xl absolute top-1/3 right-1/5" style="animation-delay: 1s;">❤️</div>
+    <div class="heart text-red-400 text-3xl absolute top-2/3 left-1/4" style="animation-delay: 2s;">❤️</div>
+    <div class="heart text-pink-300 text-5xl absolute top-1/2 right-1/3" style="animation-delay: 3s;">❤️</div>
+    <div class="heart text-red-200 text-xl absolute top-3/4 left-3/4" style="animation-delay: 4s;">❤️</div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="relative z-10 max-w-3xl mx-auto px-4 py-12 romantic-text">
+    <header class="text-center mb-12 fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold text-red-500">Para <span class="text-pink-600 font-semibold italic">Daniele Tenório</span></h1>
+      <div class="w-24 h-1 bg-pink-300 mx-auto mt-4"></div>
+    </header>
+
+    <main class="space-y-12">
+      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in">
+        <div class="text-pink-500 text-2xl mb-2">🕊️</div>
+        <p class="text-gray-700">
+          Desde o dia <span class="font-semibold text-pink-600">26 de fevereiro, às 14:53</span>... Foi quando meu mundo encontrou um novo sentido. Quando te conheci, <span class="text-red-500 font-semibold italic">Daniele Tenório</span>, tudo ficou mais leve, mais bonito, mais verdadeiro.
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 0.5s;">
+        <div class="text-red-500 text-2xl mb-2">❤️</div>
+        <p class="text-gray-700">
+          Você é o motivo do meu sorriso mais sincero. <span class="text-pink-600 font-semibold italic">Daniele</span>, não tem um só dia que eu não pense em você. Você mora nos meus pensamentos, vive nos meus sonhos, e pulsa em cada batida do meu coração.
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 1s;">
+        <div class="text-pink-500 text-2xl mb-2">📍</div>
+        <p class="text-gray-700">
+          <span class="font-semibold text-red-500">Curitiba e São Miguel dos Campos</span> são só lugares. Porque meu amor por você não cabe em mapas. A distância nunca foi obstáculo pra tudo que sinto por você. Eu te amo, <span class="text-pink-600 font-semibold italic">Dani</span>. Muito mais do que palavras conseguem dizer.
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 1.5s;">
+        <div class="text-red-400 text-2xl mb-2">🌹</div>
+        <p class="text-gray-700">
+          Mesmo sem nunca termos nos tocado, eu sinto você em mim. Você é a calmaria em meio ao caos, a certeza que eu quero pra minha vida inteira. <span class="text-pink-600 font-semibold italic">Daniele Tenório</span>, você é o meu <span class="italic">"pra sempre"</span> mais bonito.
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 2s;">
+        <div class="text-pink-500 text-2xl mb-2">🌌</div>
+        <p class="text-gray-700">
+          Meu amor por você é leve, forte, profundo e real. Talvez o destino tenha colocado quilômetros entre nós, mas o coração deu um jeito de fazer a gente se encontrar.
+        </p>
+      </div>
+
+      <div class="bg-white bg-opacity-80 rounded-xl p-6 shadow-lg fade-in" style="animation-delay: 2.5s;">
+        <div class="text-red-500 text-2xl mb-2">🎵</div>
+        <p class="text-gray-700">
+          <span class="italic">"Mesmo sem fotos juntos, cada memória minha é com você."</span> Esse site é um pedaço de mim pra você. Uma forma de dizer o que transborda no meu peito: Eu te amo, <span class="text-pink-600 font-semibold italic">Daniele</span>. E quero você na minha vida, hoje e sempre.
+        </p>
+      </div>
+    </main>
+
+    <footer class="mt-16 text-center fade-in" style="animation-delay: 3s;">
+      <button id="readAgain" class="bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 pulse">
+        <span style="font-family: 'Montserrat', sans-serif;" class="text-xl italic">Lê de novo? Porque te amar nunca cansa.</span>
+      </button>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('readAgain').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const messages = document.querySelectorAll('.fade-in');
+      messages.forEach(msg => {
+        msg.style.animation = 'none';
+        void msg.offsetWidth;
+        msg.style.animation = 'fadeIn 2s ease-in';
+      });
+    });
+
+    document.addEventListener('click', function() {
+      const audio = document.querySelector('audio');
+      if (audio.paused) {
+        audio.play().catch(e => console.log("Audio play failed:", e));
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
