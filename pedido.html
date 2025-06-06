@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quer namorar comigo?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fff0f4;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      overflow: hidden;
+    }
+    .card {
+      background: #ffffff;
+      border: 2px solid #f9c2d8;
+      border-radius: 2rem;
+      padding: 2rem;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: #ec4899;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .buttons-container {
+      position: relative;
+      height: 60px; /* altura para manter os botões visíveis */
+    }
+    #sim, #nao {
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 0;
+    }
+    #sim {
+      background: #ec4899;
+      color: white;
+      left: 0;
+    }
+    #sim:hover {
+      background: #be123c;
+    }
+    #nao {
+      background: #eee;
+      color: #444;
+      left: 130px; /* começa ao lado do botão "Sim" */
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Quer namorar comigo?</h1>
+    <p>É simples, sincero e de coração. Só quero viver isso com você.</p>
+    <div class="buttons-container" id="btn-area">
+      <button id="sim">Sim 💖</button>
+      <button id="nao">Não 😢</button>
+    </div>
+  </div>
+
+  <script>
+    const btnSim = document.getElementById("sim");
+    const btnNao = document.getElementById("nao");
+    const area = document.getElementById("btn-area");
+
+    btnSim.addEventListener("click", () => {
+      window.location.href = "resposta.html";
+    });
+
+    btnNao.addEventListener("click", () => {
+      const areaRect = area.getBoundingClientRect();
+      const maxX = area.clientWidth - btnNao.offsetWidth;
+      const maxY = area.clientHeight - btnNao.offsetHeight;
+
+      const newX = Math.floor(Math.random() * maxX);
+      const newY = Math.floor(Math.random() * maxY);
+
+      btnNao.style.left = `${newX}px`;
+      btnNao.style.top = `${newY}px`;
+    });
+  </script>
+</body>
+</html>

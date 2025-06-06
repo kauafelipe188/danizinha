@@ -119,6 +119,22 @@
       0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.8; }
       50% { transform: translate(10px, 10px) scale(1.2); opacity: 0.3; }
     }
+    .botao-secreto {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      font-size: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--rosa-escuro);
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+    .botao-secreto:hover {
+      opacity: 1;
+    }
     @media (max-width: 600px) {
       .box {
         padding: 1.2rem 0.5rem;
@@ -151,6 +167,10 @@
       Com carinho,<br>
       <span>Kauã, ou, carinhosamente falando, seu neném</span>
     </div>
+
+    <!-- Botão discreto com coração -->
+    <a href="pedido.html" class="botao-secreto">❤️</a>
+
   </div>
 </body>
 </html>
